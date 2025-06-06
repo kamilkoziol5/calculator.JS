@@ -41,7 +41,8 @@ export class Calculator {
     const a = parseFloat(this.previousNumber);
     const b = parseFloat(this.currentNumber);
 
-    if (!isNaN(a) || isNaN(b)) return;
+    if (isNaN(a) || isNaN(b)) return;
+    
 
     switch (this.operator) {
       case "+":
