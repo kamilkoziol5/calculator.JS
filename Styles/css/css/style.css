@@ -10,13 +10,12 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background: #121212;
+  background: #1a1a1a;
+  font-family: sans-serif;
   overflow-y: hidden;
-  font-family: "Montserrat", sans-serif;
 }
 
 .calculator {
-  margin: 1rem;
   background-color: #343434;
   padding: 25px;
   border-radius: 12px;
@@ -28,7 +27,6 @@ body {
   background: #030e07;
   color: #e4e4e4;
   font-size: 2em;
-  font-family: "Share Tech Mono", monospace;
   padding: 12px;
   text-align: right;
   margin-bottom: 25px;
@@ -44,17 +42,17 @@ body {
   right: 10px;
   width: 10px;
   height: 10px;
-  background-color: hsl(150, 74%, 51%);
+  background-color: #73ffb9;
   border-radius: 50%;
 }
 .calculator .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 70px);
   gap: 10px;
 }
 .calculator .buttons .btn {
-  min-height: 75px;
-  min-width: 75px;
+  min-width: 70px;
+  min-height: 70px;
   padding: 20px;
   font-size: 1.2em;
   background-color: #3f3f3f;
@@ -69,70 +67,62 @@ body {
   justify-content: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
+.calculator .buttons .btn:hover {
+  background-color: #585858;
+  transform: scale(0.98);
+}
 .calculator .buttons .btn:active {
-  background-color: #6a6a6a;
+  background-color: #727272;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
 }
 .calculator .buttons .operator {
-  background-color: hsl(33, 100%, 51%);
-  border: 1px solid hsl(33, 100%, 51%);
+  background-color: #ff8c00;
+  border: 1px solid #ff8c00;
+}
+.calculator .buttons .operator:hover {
+  background-color: #ffa733;
 }
 .calculator .buttons .operator:active {
-  background-color: hsl(33, 100%, 69%);
+  background-color: #ffb95c;
 }
 .calculator .buttons .equal {
   grid-column: span 2;
-  background-color: hsl(150, 74%, 51%);
-  border: 1px solid hsl(150, 74%, 51%);
+  background-color: #26de81;
+  border: 1px solid #26de81;
+}
+.calculator .buttons .equal:hover {
+  background-color: #00b894;
 }
 .calculator .buttons .equal:active {
-  background-color: hsl(150, 74%, 69%);
+  background-color: #2bdeba;
 }
 .calculator .buttons .clear {
   grid-column: span 2;
-  background-color: hsl(0, 67%, 51%);
-  border: 1px solid hsl(0, 67%, 51%);
+  background-color: #d63031;
+  border: 1px solid #d63031;
+}
+.calculator .buttons .clear:hover {
+  background-color: #ff5757;
 }
 .calculator .buttons .clear:active {
-  background-color: hsl(0, 67%, 60%);
+  background-color: #ff7a7a;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .buttons .btn:hover {
-    background-color: #585858;
-    transform: scale(0.99);
-  }
-  .buttons .operator:hover {
-    background-color: hsl(33, 100%, 56%);
-  }
-  .buttons .equal:hover {
-    background-color: hsl(150, 74%, 56%);
-  }
-  .buttons .clear:hover {
-    background-color: hsl(0, 67%, 55%);
-  }
-}
 @media (max-width: 500px) {
-  .calculator {
-    padding: 10px;
+  .btn {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1em;
   }
-  .calculator .output {
+  .output {
     padding: 10px;
     margin-bottom: 12px;
     font-size: 1.5em;
     line-height: 1.5em;
   }
-  .calculator .output::after {
+  .output::after {
     top: 4px;
     width: 6px;
     height: 6px;
-  }
-  .calculator .buttons {
-    gap: 6px;
-  }
-  .calculator .buttons .btn {
-    min-width: 40px;
-    min-height: 40px;
-    font-size: 1em;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -42,7 +42,6 @@ export class Calculator {
     const b = parseFloat(this.currentNumber);
 
     if (isNaN(a) || isNaN(b)) return;
-    
 
     switch (this.operator) {
       case "+":
@@ -52,7 +51,7 @@ export class Calculator {
       case "*":
         return a * b;
       case "/":
-        return b !== 0 ? a / b : "Error";
+        return b !== 0 ? a / b : '<span style="color: red;">Error</span>';
       default:
         return b;
     }
@@ -69,13 +68,13 @@ export class Calculator {
 
   updateDisplay() {
     if (this.operator === null && this.currentNumber !== "") {
-      this.output.textContent = this.currentNumber;
+      this.output.innerHTML = this.currentNumber;
     } else if (this.operator && this.currentNumber === "") {
-      this.output.textContent = `${this.previousNumber} ${this.operator}`;
+      this.output.innerHTML = `${this.previousNumber} ${this.operator}`;
     } else if (this.previousNumber && this.currentNumber && this.operator) {
-      this.output.textContent = `${this.previousNumber} ${this.operator} ${this.currentNumber}`;
+      this.output.innerHTML = `${this.previousNumber} ${this.operator} ${this.currentNumber}`;
     } else {
-      this.output.textContent = "0";
+      this.output.innerHTML = "0";
     }
   }
 }
