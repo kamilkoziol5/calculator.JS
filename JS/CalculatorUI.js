@@ -1,9 +1,9 @@
 export function createCalculatorUI() {
-    const calc = document.createElement("div");
-    calc.classList.add("calculator");
-  
-    calc.innerHTML = `
-      <div class="output" id="output">0</div>
+  const calc = document.createElement("div");
+  calc.classList.add("calculator");
+
+  calc.innerHTML = `
+   <div class="output" id="output">0</div>
       <div class="buttons">
         <button class="btn clear">AC</button>
         <button data-operator="%" class="btn operator">%</button>
@@ -24,16 +24,15 @@ export function createCalculatorUI() {
         <button class="btn dot" data-number=".">.</button>
         <button class="btn equal">=</button>
       </div>
-    `;
-  
-    document.querySelector(".app").append(calc);
-  
-    return {
-      output: calc.querySelector("#output"),
-      numberButtons: calc.querySelectorAll(".number"),
-      operatorButtons: calc.querySelectorAll(".operator"),
-      clearButton: calc.querySelector(".clear"),
-      equalButton: calc.querySelector(".equal")
-    };
-  }
-  
+  `;
+  document.querySelector(".app").append(calc);
+
+  return {
+    output: calc.querySelector("#output"),
+    numberButtons: calc.querySelectorAll(".btn.number"),
+    operatorButtons: calc.querySelectorAll(".btn.operator"),
+    clearButton: calc.querySelector(".btn.clear"),
+    equalButton: calc.querySelector(".btn.equal"),
+    dotButton: calc.querySelector(".btn.dot"),
+  };
+}

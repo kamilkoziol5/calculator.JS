@@ -51,7 +51,7 @@ export class Calculator {
       case "*":
         return a * b;
       case "/":
-        return b !== 0 ? a / b : '<span style="color: red;">Error</span>';
+        return b !== 0 ? a / b : "Error";
       default:
         return b;
     }
@@ -67,6 +67,10 @@ export class Calculator {
   }
 
   updateDisplay() {
+    if (this.currentNumber === "Error") {
+      this.output.innerHTML = '<span style="color: red;">Error</span>';
+      return;
+    }
     if (this.operator === null && this.currentNumber !== "") {
       this.output.innerHTML = this.currentNumber;
     } else if (this.operator && this.currentNumber === "") {
